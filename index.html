@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Financial Advisor - Groww</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/groww-logo.png" alt="Groww logo" class="logo">
+    </header>
+    <div class="container">
+        <h1>Find Your Perfect Financial Advisor</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <form id="questionnaire" action="https://formspree.io/f/manwvrvp" method="POST">
+            <div class="question active" data-question="1">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="button-group">
+                    <button type="button" onclick="nextQuestion(1)">Next</button>
+                </div>
+            </div>
+            
+            <div class="question" data-question="2">
+                <label for="age">What is your age?</label>
+                <input type="number" id="age" name="age" required min="18" max="120">
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousQuestion(2)">Back</button>
+                    <button type="button" onclick="nextQuestion(2)">Next</button>
+                </div>
+            </div>
+            
+            <div class="question" data-question="3">
+                <label for="maritalStatus">What is your marital status?</label>
+                <select id="maritalStatus" name="maritalStatus" required>
+                    <option value="">Select an option</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousQuestion(3)">Back</button>
+                    <button type="button" onclick="nextQuestion(3)">Next</button>
+                </div>
+            </div>
+            
+            <div class="question" data-question="4">
+                <label for="income">What is your annual income range?</label>
+                <select id="income" name="income" required>
+                    <option value="">Select an option</option>
+                    <option value="0-50k">$0 - $50,000</option>
+                    <option value="50k-100k">$50,001 - $100,000</option>
+                    <option value="100k-250k">$100,001 - $250,000</option>
+                    <option value="250k+">$250,001+</option>
+                </select>
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousQuestion(4)">Back</button>
+                    <button type="button" onclick="nextQuestion(4)">Next</button>
+                </div>
+            </div>
+            
+            <div class="question" data-question="5">
+                <label for="netWorth">What is your approximate net worth?</label>
+                <input type="text" id="netWorth" name="netWorth" required placeholder="e.g., $500,000">
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousQuestion(5)">Back</button>
+                    <button type="button" onclick="nextQuestion(5)">Next</button>
+                </div>
+            </div>
+            
+            <div class="question" data-question="6">
+                <label>What are your primary financial goals? (Select all that apply)</label>
+                <div>
+                    <input type="checkbox" id="goal1" name="goals" value="retirement">
+                    <label for="goal1">Retirement planning</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="goal2" name="goals" value="wealth">
+                    <label for="goal2">Wealth accumulation</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="goal3" name="goals" value="debt">
+                    <label for="goal3">Debt reduction</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="goal4" name="goals" value="other">
+                    <label for="goal4">Other</label>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="back" onclick="previousQuestion(6)">Back</button>
+                    <button type="submit">Find My Advisor</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
